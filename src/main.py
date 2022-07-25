@@ -15,5 +15,6 @@ print(f"i'm a member of {len(teams)} teams")
 project_id = int(os.environ["modal.state.slyProjectId"])
 project = api.project.get_info_by_id(project_id)
 if project is None:
-    raise KeyError(f"Project with ID {project_id} not found in your account")
-print(f"Project info: {project.name} (id={project.id})")
+    print(f"Project with ID {project_id} not found in your account")
+else:
+    print(f"Project info: {project.name} (id={project.id})")
